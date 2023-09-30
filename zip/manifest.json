@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "storygraph-time",
+    "version": "1.1",
+
+    "content_scripts":[
+        {
+            "matches": ["*://app.thestorygraph.com/*"],
+            "js": ["storygraph-time.js"]
+        }
+    ],
+
+    "browser_specific_settings":{
+        "gecko": {
+            "id": "storygraph@time.com"
+        }
+    }
+}
