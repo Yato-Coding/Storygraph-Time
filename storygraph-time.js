@@ -61,7 +61,6 @@ function timeToBeRead(){
     let contentToRead = document.getElementsByClassName("my-2");
     let contentText = contentToRead[0].childNodes[3].textContent;
     let text = documentFormatDiv[7].childNodes[3].textContent
-    console.log(text)
     if (!contentText.includes("hours")){
         let matches = text.match(/\d+/g)
         let pagesRead = 0;
@@ -70,7 +69,6 @@ function timeToBeRead(){
             pagesRead += matches[i];
         }
         pagesRead = parseInt(pagesRead);
-        console.log(pagesRead)
         hoursRead = ((pagesRead*300)/WPM)/60;
         daysRead = (hoursRead/24).toFixed(1)
         contentToRead[0].childNodes[3].textContent += ", " + ((hoursRead).toFixed(0)) + " hours" + " / " + daysRead + " days";
@@ -78,7 +76,6 @@ function timeToBeRead(){
     }
 }
 
-console.log(currentUrl)
 if (currentUrl == "https://app.thestorygraph.com/recommendations"){
     setTimeout(addEstimateHoursBooks, 3000);
 }
@@ -98,7 +95,6 @@ setInterval(function() {
     
     if (window.location.href !== currentUrl) {
         currentUrl = window.location.href
-        console.log(currentUrl)
         if (currentUrl == "https://app.thestorygraph.com/recommendations"){
             setTimeout(addEstimateHoursBooks, 3000);
         }
